@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>Grounds for Defense</title>
+<link rel="stylesheet" href="style.css" />
+<script src="https://cdn.jsdelivr.net/npm/phaser@3.80.1/dist/phaser.min.js"></script>
+</head>
+<body>
+  <div id="hud">
+    <div class="hud-stat"><span class="lbl">Beans</span><span id="hud-beans">200</span></div>
+    <div class="hud-stat"><span class="lbl">Wave</span><span id="hud-wave">0 / 10</span></div>
+    <div class="hud-stat"><span class="lbl">Roaster</span><span id="hud-hp">20</span></div>
+    <button id="ability-btn" class="ability">☕ Perfect Shot</button>
+    <button id="start-wave" class="start">Start Wave</button>
+  </div>
+  <div id="game"></div>
+  <div id="tower-picker" class="picker hidden">
+    <div class="picker-title">Place Tower</div>
+    <button data-tower="drip">Drip Machine<br><span>50¢</span></button>
+    <button data-tower="espresso">Espresso<br><span>150¢</span></button>
+    <button data-tower="frother">Milk Frother<br><span>75¢</span></button>
+    <button data-tower="cold">Cold Brew<br><span>100¢</span></button>
+    <button class="cancel">Cancel</button>
+  </div>
+  <div id="tower-actions" class="picker hidden">
+    <div class="picker-title">Tower</div>
+    <button id="upgrade-btn">Upgrade</button>
+    <button id="sell-btn">Sell</button>
+    <button class="cancel">Cancel</button>
+  </div>
+  <div id="overlay" class="overlay hidden">
+    <div class="overlay-card">
+      <h1 id="overlay-title">Defend the Brew</h1>
+      <p id="overlay-msg">Place towers near the path. Click Start Wave when ready.</p>
+      <button id="overlay-btn">Begin</button>
+    </div>
+  </div>
+  <script src="game.js"></script>
+</body>
+</html>
