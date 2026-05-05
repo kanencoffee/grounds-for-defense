@@ -322,9 +322,9 @@ class GameScene extends Phaser.Scene {
       ['e_wraith','assets/enemy-wraith.svg',56],
       ['e_baron','assets/enemy-baron.svg',72],
       ['bean','assets/bean.svg',16],
-      ['roaster','assets/roaster.svg',96],
+      ['barista','assets/barista.svg',96],
     ];
-    for (const [k,u,s] of SVGS) this.load.svg(k, u, { width:s, height: u==='assets/roaster.svg'? 120 : s });
+    for (const [k,u,s] of SVGS) this.load.svg(k, u, { width:s, height: u==='assets/barista.svg'? 120 : s });
   }
   create(){
     window.scene = this;
@@ -341,10 +341,10 @@ class GameScene extends Phaser.Scene {
     g.lineStyle(34, 0x6b4423, 1); this.path.draw(g);
     g.lineStyle(28, 0x8b5a2b, 1); this.path.draw(g);
     g.lineStyle(2, 0xa07842, 0.6); this.path.draw(g);
-    // sacred roaster
+    // the barista (player avatar at end of path)
     const last = PATH_PTS[PATH_PTS.length-1];
-    this.roaster = this.add.image(last[0]-50, last[1]-10, 'roaster').setDepth(2).setDisplaySize(96,120);
-    this.tweens.add({ targets: this.roaster, scale: { from: 0.8, to: 0.84 }, duration: 1800, yoyo:true, repeat:-1, ease:'Sine.easeInOut' });
+    this.barista = this.add.image(last[0]-50, last[1]-10, 'barista').setDepth(2).setDisplaySize(96,120);
+    this.tweens.add({ targets: this.barista, scale: { from: 0.8, to: 0.84 }, duration: 1800, yoyo:true, repeat:-1, ease:'Sine.easeInOut' });
     // slots
     this.slots = SLOTS.map(([x,y], i)=>{
       const ring = this.add.circle(x, y, 18, 0x000000, 0.35).setStrokeStyle(2, 0xf0c987, 0.7).setDepth(2);
@@ -377,7 +377,7 @@ class GameScene extends Phaser.Scene {
 
     this.updateHUD();
     this.bindDOM();
-    showOverlay('Grounds for Defense','Bad coffee marches on the Sacred Roaster: stale beans, pre-ground bags, reheated milk, watery weak cups, burnt charcoal beans, and the K-Pod Tyrant himself. Place towers, defend the brew.','Begin', ()=>{ hideOverlay(); Audio.ensureCtx && Audio.ensureCtx(); Audio.startMusic && Audio.startMusic(); });
+    showOverlay('Grounds for Defense','Bad coffee marches on the Barista: stale beans, pre-ground bags, reheated milk, watery weak cups, burnt charcoal beans, and the K-Pod Tyrant himself. Defend the counter.','Begin', ()=>{ hideOverlay(); Audio.ensureCtx && Audio.ensureCtx(); Audio.startMusic && Audio.startMusic(); });
 
     this.input.on('pointerdown', (p)=>{
       if (!this.perfectShotArmed) return;
@@ -539,8 +539,8 @@ class GameScene extends Phaser.Scene {
     btn.disabled = this.spawning || this.waveActive || this.gameOver || this.wave>=this.maxWaves;
     btn.textContent = this.wave===0 ? 'Start Wave' : (this.waveActive ? 'Wave Active' : (this.wave>=this.maxWaves?'Done':'Next Wave'));
   }
-  win(){ this.gameOver=true; Audio.sfx.win(); Audio.stopMusic(); this.cameras.main.flash(600, 240, 200, 100); showOverlay('☕ The Brew is Saved!','You crushed the K-Pod Tyrant and saved the Sacred Roaster. Specialty coffee lives on.','Play Again',()=>location.reload()); }
-  lose(){ this.gameOver=true; Audio.sfx.lose(); Audio.stopMusic(); this.cameras.main.flash(600, 30, 30, 30); showOverlay('💀 The Roaster Goes Cold','Bad coffee has won. The world drinks brown water. Try again?','Retry',()=>location.reload()); }
+  win(){ this.gameOver=true; Audio.sfx.win(); Audio.stopMusic(); this.cameras.main.flash(600, 240, 200, 100); showOverlay('☕ The Counter Holds!','You crushed the K-Pod Tyrant. The Barista lives to pull another shot. Specialty coffee endures.','Play Again',()=>location.reload()); }
+  lose(){ this.gameOver=true; Audio.sfx.lose(); Audio.stopMusic(); this.cameras.main.flash(600, 30, 30, 30); showOverlay('💀 The Barista Falls','Bad coffee overran the counter. The world drinks brown water now. Try again?','Retry',()=>location.reload()); }
   update(time, dt){
     if (this.gameOver) return;
     for (const t of this.towers) t.update(dt);
