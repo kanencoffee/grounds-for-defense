@@ -19,6 +19,8 @@ html, body { margin: 0; padding: 0; background: #2b1d12; color: #f5e8d6; font-fa
 #hud .ability:hover:not(:disabled) { background: #a85050; }
 #hud .ability.armed { background: #d97706; box-shadow: 0 0 12px #d97706; }
 #hud .start { margin-left: 8px; }
+#hud .mute { margin-left: 8px; padding: 8px 12px; font-size: 16px; background: #3d2817; }
+#hud button.mute { margin-left: 8px; }
 
 .picker {
   position: fixed; left: 50%; top: 50%; transform: translate(-50%,-50%);

@@ -76,6 +76,7 @@ class Enemy {
     this.hp -= d;
     // damage number
     this.scene.spawnDamageText(this.gfx.x, this.gfx.y - this.def.size, Math.round(d));
+    if (d > 0) Audio.sfx.hit();
     // hit flash
     this.gfx.setTint(0xffffff);
     this.scene.time.delayedCall(80, ()=> this.alive && this.gfx.clearTint());
@@ -93,6 +94,7 @@ class Enemy {
     if (killed) {
       this.scene.addBeans(this.def.bounty);
       this.scene.spawnPoof(this.gfx.x, this.gfx.y, 0xf0c987);
+      Audio.sfx.enemyDie();
       // split mechanic
       if (this.def.splitInto) {
         for (let i=0; i<this.def.splitCount; i++) {
@@ -182,6 +184,7 @@ class Tower {
         this.lastFire = now;
         const t = this.findTarget();
         if (t) {
+          Audio.sfx.grinder();
           // grind visual: short line to target
           const beam = this.scene.add.line(0,0,this.x,this.y,t.gfx.x,t.gfx.y,this.def.proj,1).setLineWidth(2).setOrigin(0).setDepth(7);
           this.scene.tweens.add({targets:beam,alpha:0,duration:200,onComplete:()=>beam.destroy()});
@@ -195,12 +198,16 @@ class Tower {
     this.lastFire = now;
     if (this.def.charge) {
       this.glow.setFillStyle(0xd97706, 0.4);
+      Audio.sfx.espressoChg();
       this.scene.time.delayedCall(this.def.charge, () => {
         this.glow.setFillStyle(0xf0c987, 0.15);
         if (!this.scene.scene.isActive()) return;
+        Audio.sfx.espressoFire();
         this.firePierce();
       });
     } else {
+      const sfxKey = this.type === 'aeropress' ? 'aeropress' : (this.type === 'frother' ? 'frother' : (this.type === 'pourover' ? 'pourover' : 'drip'));
+      Audio.sfx[sfxKey] && Audio.sfx[sfxKey]();
       this.fireProjectile(target);
     }
   }
@@ -237,6 +244,7 @@ class Tower {
         }
         // splash (pour-over)
         if (this.def.splash) {
+          Audio.sfx.splash();
           for (const e of this.scene.enemies) {
             if (e===target || !e.alive) continue;
             const ddx=e.gfx.x-target.gfx.x, ddy=e.gfx.y-target.gfx.y;
@@ -369,7 +377,7 @@ class GameScene extends Phaser.Scene {
 
     this.updateHUD();
     this.bindDOM();
-    showOverlay('Grounds for Defense','The Decaf Cult marches on the Sacred Roaster. Place towers, defend the brew. Click Start Wave when ready.','Begin', ()=>hideOverlay());
+    showOverlay('Grounds for Defense','Bad coffee marches on the Sacred Roaster: stale beans, pre-ground bags, reheated milk, watery weak cups, burnt charcoal beans, and the K-Pod Tyrant himself. Place towers, defend the brew.','Begin', ()=>{ hideOverlay(); Audio.ensureCtx && Audio.ensureCtx(); Audio.startMusic && Audio.startMusic(); });
 
     this.input.on('pointerdown', (p)=>{
       if (!this.perfectShotArmed) return;
@@ -381,6 +389,7 @@ class GameScene extends Phaser.Scene {
       }
       if (best){
         best.takeDamage(500);
+        Audio.sfx.perfectShot();
         this.shake(280, 0.012);
         const ring = this.add.circle(best.gfx.x,best.gfx.y,10,0xf0c987).setDepth(8);
         this.tweens.add({targets:ring, scale:8, alpha:0, duration:500, onComplete:()=>ring.destroy()});
@@ -428,10 +437,16 @@ class GameScene extends Phaser.Scene {
       b.onclick = ()=> { hide('tower-picker'); hide('tower-actions'); this.pendingSlot=null; this.selectedTower=null; };
     });
     document.getElementById('upgrade-btn').onclick = ()=> {
-      if (this.selectedTower){ this.selectedTower.upgrade(); this.updateHUD(); hide('tower-actions'); }
+      if (this.selectedTower){ if(this.selectedTower.upgrade()) Audio.sfx.upgrade(); else Audio.sfx.error(); this.updateHUD(); hide('tower-actions'); }
     };
     document.getElementById('sell-btn').onclick = ()=> {
-      if (this.selectedTower){ this.selectedTower.sell(); this.updateHUD(); hide('tower-actions'); }
+      if (this.selectedTower){ this.selectedTower.sell(); Audio.sfx.sell(); this.updateHUD(); hide('tower-actions'); }
+    };
+    document.getElementById('mute-btn').onclick = ()=> {
+      const newMuted = !Audio.isMuted();
+      Audio.setMute(newMuted);
+      document.getElementById('mute-btn').textContent = newMuted ? '🔇' : '🔊';
+      if (!newMuted) Audio.startMusic();
     };
   }
   openTowerPicker(slotIdx){
@@ -455,7 +470,7 @@ class GameScene extends Phaser.Scene {
   }
   placeTower(type){
     const def = TOWER_DEFS[type];
-    if (this.beans < def.cost){ flash(); return; }
+    if (this.beans < def.cost){ flash(); Audio.sfx.error(); return; }
     const slot = this.slots[this.pendingSlot];
     this.beans -= def.cost;
     const t = new Tower(this, slot.idx, slot.x, slot.y, type);
@@ -464,6 +479,7 @@ class GameScene extends Phaser.Scene {
     slot.ring.setVisible(false); slot.dot.setVisible(false);
     hide('tower-picker');
     this.updateHUD();
+    Audio.sfx.place();
     // place poof
     this.spawnPoof(slot.x, slot.y, 0xf0c987);
   }
@@ -476,6 +492,8 @@ class GameScene extends Phaser.Scene {
     if (this.spawning || this.waveActive || this.gameOver) return;
     if (this.wave >= this.maxWaves) return;
     this.wave++;
+    Audio.sfx.waveStart();
+    Audio.startMusic();
     const plan = WAVE_PLAN[this.wave-1];
     this.spawning = true; this.waveActive = true;
     let pending = plan.length;
@@ -507,6 +525,7 @@ class GameScene extends Phaser.Scene {
     this.hp = Math.max(0, this.hp - 1);
     this.shake(150, 0.008);
     this.cameras.main.flash(120, 200, 30, 30);
+    Audio.sfx.enemyReachEnd();
     this.updateHUD();
     if (this.hp<=0) this.lose();
   }
@@ -520,8 +539,8 @@ class GameScene extends Phaser.Scene {
     btn.disabled = this.spawning || this.waveActive || this.gameOver || this.wave>=this.maxWaves;
     btn.textContent = this.wave===0 ? 'Start Wave' : (this.waveActive ? 'Wave Active' : (this.wave>=this.maxWaves?'Done':'Next Wave'));
   }
-  win(){ this.gameOver=true; this.cameras.main.flash(600, 240, 200, 100); showOverlay('☕ The Brew is Saved!','You defeated the Decaf Baron and protected the Sacred Roaster. The world will know the taste of joy.','Play Again',()=>location.reload()); }
-  lose(){ this.gameOver=true; this.cameras.main.flash(600, 30, 30, 30); showOverlay('💀 The Roaster Goes Cold','The Decaf Cult has won. Flavor is lost. Try again?','Retry',()=>location.reload()); }
+  win(){ this.gameOver=true; Audio.sfx.win(); Audio.stopMusic(); this.cameras.main.flash(600, 240, 200, 100); showOverlay('☕ The Brew is Saved!','You crushed the K-Pod Tyrant and saved the Sacred Roaster. Specialty coffee lives on.','Play Again',()=>location.reload()); }
+  lose(){ this.gameOver=true; Audio.sfx.lose(); Audio.stopMusic(); this.cameras.main.flash(600, 30, 30, 30); showOverlay('💀 The Roaster Goes Cold','Bad coffee has won. The world drinks brown water. Try again?','Retry',()=>location.reload()); }
   update(time, dt){
     if (this.gameOver) return;
     for (const t of this.towers) t.update(dt);
@@ -530,7 +549,7 @@ class GameScene extends Phaser.Scene {
     if (this.waveActive && !this.spawning && this.enemies.length===0){
       this.waveActive = false;
       this.addBeans(30 + this.wave*5);
-      if (this.wave >= this.maxWaves) this.win();
+      if (this.wave >= this.maxWaves) this.win(); else Audio.sfx.waveClear();
       this.updateHUD();
     }
     if (!this.perfectShotReady && time >= this.perfectShotCdEnd){
