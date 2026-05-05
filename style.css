@@ -32,6 +32,9 @@ html, body { margin: 0; padding: 0; background: #2b1d12; color: #f5e8d6; font-fa
 .picker button:hover { background: #4d3220; }
 .picker button span { display: block; font-size: 11px; opacity: 0.7; color: #f0c987; }
 .picker .cancel { background: #1a1108; opacity: 0.7; }
+.tower-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; }
+.tower-info { font-size: 12px; color: #f0c987; padding: 6px 8px; background: #1a1108; border-radius: 4px; line-height: 1.4; max-width: 240px; }
+.picker button:disabled { opacity: 0.4; cursor: not-allowed; }
 
 .overlay { position: fixed; inset: 0; background: rgba(0,0,0,0.75); display: flex; align-items: center; justify-content: center; z-index: 50; }
 .overlay.hidden { display: none; }
