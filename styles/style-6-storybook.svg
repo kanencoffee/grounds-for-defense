@@ -1,0 +1,61 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" width="128" height="128">
+  <!-- STORYBOOK — ink line drawing + watercolor fills, warm + elegant (think Maurice Sendak / classic kids' book) -->
+  <defs>
+    <radialGradient id="sb-page" cx="0.5" cy="0.5">
+      <stop offset="0" stop-color="#fffaf0"/>
+      <stop offset="1" stop-color="#f0dcb8"/>
+    </radialGradient>
+    <radialGradient id="sb-bean" cx="0.4" cy="0.4">
+      <stop offset="0" stop-color="#c89868" stop-opacity="0.85"/>
+      <stop offset="1" stop-color="#7a4a26" stop-opacity="0.5"/>
+    </radialGradient>
+    <radialGradient id="sb-mold" cx="0.5" cy="0.5">
+      <stop offset="0" stop-color="#7aa84a" stop-opacity="0.7"/>
+      <stop offset="1" stop-color="#7aa84a" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <!-- aged paper bg with vignette -->
+  <rect width="128" height="128" fill="url(#sb-page)"/>
+  <!-- soft floor shadow -->
+  <ellipse cx="64" cy="106" rx="36" ry="3" fill="#3d2817" opacity="0.25"/>
+  <!-- watercolor wash UNDER the ink lines (irregular, soft) -->
+  <ellipse cx="62" cy="62" rx="42" ry="46" fill="url(#sb-bean)"/>
+  <!-- secondary wash (deepens shadow side) -->
+  <path d="M 64 22 Q 96 26 102 64 Q 100 100 64 104 L 64 64 Z" fill="#7a4a26" opacity="0.35"/>
+  <!-- highlight wash -->
+  <ellipse cx="50" cy="48" rx="14" ry="18" fill="#e8c898" opacity="0.5"/>
+  <!-- moldy bloom watercolor -->
+  <ellipse cx="86" cy="78" rx="14" ry="11" fill="url(#sb-mold)"/>
+  <!-- INK LINE OUTLINES (clean elegant — pen strokes) -->
+  <!-- bean body outline -->
+  <path d="M 64 22 Q 92 22 100 46 Q 108 64 102 84 Q 96 102 80 106 Q 64 108 48 106 Q 32 102 26 84 Q 20 64 28 46 Q 36 22 64 22 Z" fill="none" stroke="#3d2817" stroke-width="2" stroke-linecap="round"/>
+  <!-- center crease -->
+  <path d="M 64 22 Q 58 64 64 106" stroke="#3d2817" stroke-width="2" fill="none" stroke-linecap="round"/>
+  <path d="M 64 30 Q 60 64 64 100" stroke="#3d2817" stroke-width="0.8" fill="none" opacity="0.6"/>
+  <!-- mold spot ink outline -->
+  <circle cx="86" cy="78" r="8" fill="none" stroke="#3a5a2a" stroke-width="1.5"/>
+  <circle cx="84" cy="76" r="2" fill="#3a5a2a" opacity="0.7"/>
+  <!-- delicate eyes -->
+  <ellipse cx="46" cy="62" rx="3" ry="4" fill="#fff" stroke="#1a1108" stroke-width="1.5"/>
+  <ellipse cx="80" cy="62" rx="3" ry="4" fill="#fff" stroke="#1a1108" stroke-width="1.5"/>
+  <ellipse cx="46" cy="63" rx="1.5" ry="2" fill="#1a1108"/>
+  <ellipse cx="80" cy="63" rx="1.5" ry="2" fill="#1a1108"/>
+  <!-- delicate eyelashes -->
+  <path d="M 42 56 L 40 53 M 50 56 L 52 53 M 76 56 L 74 53 M 84 56 L 86 53" stroke="#1a1108" stroke-width="0.8" stroke-linecap="round"/>
+  <!-- gentle drooping brows -->
+  <path d="M 38 52 Q 46 50 54 54" stroke="#3d2817" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+  <path d="M 72 54 Q 80 50 88 52" stroke="#3d2817" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+  <!-- soft frown -->
+  <path d="M 50 84 Q 64 78 78 84" stroke="#1a1108" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+  <!-- elegant cobweb in corner -->
+  <g stroke="#a89878" stroke-width="0.6" fill="none" opacity="0.7">
+    <line x1="10" y1="10" x2="32" y2="32"/>
+    <line x1="10" y1="10" x2="22" y2="20"/>
+    <line x1="10" y1="10" x2="14" y2="22"/>
+    <line x1="10" y1="10" x2="20" y2="14"/>
+    <path d="M 14 16 Q 18 14 20 18 Q 16 18 14 16" fill="#a89878" opacity="0.6"/>
+  </g>
+  <!-- decorative flourish -->
+  <path d="M 100 110 Q 108 108 112 116" stroke="#7a5034" stroke-width="1" fill="none"/>
+  <circle cx="112" cy="116" r="1.5" fill="#7a5034"/>
+</svg>

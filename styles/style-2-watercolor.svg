@@ -1,0 +1,53 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" width="128" height="128">
+  <!-- WATERCOLOR / HAND-PAINTED — soft layered washes, no hard outlines -->
+  <defs>
+    <radialGradient id="wc-paper" cx="0.5" cy="0.5">
+      <stop offset="0" stop-color="#fff8e8"/>
+      <stop offset="1" stop-color="#e8d8b8"/>
+    </radialGradient>
+    <radialGradient id="wc-bean" cx="0.45" cy="0.4">
+      <stop offset="0" stop-color="#b8956a" stop-opacity="0.95"/>
+      <stop offset="0.6" stop-color="#7a5034" stop-opacity="0.9"/>
+      <stop offset="1" stop-color="#5c3a1c" stop-opacity="0.4"/>
+    </radialGradient>
+    <radialGradient id="wc-shadow" cx="0.5" cy="0.5">
+      <stop offset="0" stop-color="#3d2817" stop-opacity="0.5"/>
+      <stop offset="1" stop-color="#3d2817" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="wc-mold" cx="0.5" cy="0.5">
+      <stop offset="0" stop-color="#5a8a3a" stop-opacity="0.85"/>
+      <stop offset="1" stop-color="#5a8a3a" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <!-- watercolor paper background -->
+  <rect width="128" height="128" fill="url(#wc-paper)"/>
+  <!-- soft shadow under bean -->
+  <ellipse cx="64" cy="108" rx="40" ry="6" fill="url(#wc-shadow)"/>
+  <!-- multiple layered washes for the bean -->
+  <ellipse cx="64" cy="64" rx="46" ry="50" fill="#9a7250" opacity="0.5"/>
+  <ellipse cx="62" cy="62" rx="42" ry="46" fill="url(#wc-bean)" opacity="0.85"/>
+  <ellipse cx="60" cy="58" rx="36" ry="40" fill="#7a5034" opacity="0.4"/>
+  <!-- highlight bloom -->
+  <ellipse cx="50" cy="48" rx="14" ry="18" fill="#d8b890" opacity="0.4"/>
+  <!-- center crease — soft brushstroke -->
+  <path d="M 64 22 Q 58 64 64 106" fill="none" stroke="#3d2817" stroke-width="3" opacity="0.7" stroke-linecap="round"/>
+  <path d="M 64 28 Q 60 64 64 100" fill="none" stroke="#1a1108" stroke-width="1.5" opacity="0.5"/>
+  <!-- moldy bloom -->
+  <ellipse cx="86" cy="80" rx="12" ry="10" fill="url(#wc-mold)"/>
+  <ellipse cx="40" cy="88" rx="9" ry="7" fill="url(#wc-mold)" opacity="0.6"/>
+  <!-- soft eyes (no outline, just dark spots) -->
+  <ellipse cx="46" cy="62" rx="3" ry="4" fill="#1a1108" opacity="0.85"/>
+  <ellipse cx="80" cy="62" rx="3" ry="4" fill="#1a1108" opacity="0.85"/>
+  <!-- soft droopy brows -->
+  <path d="M 36 54 Q 46 56 56 60" stroke="#3d2817" stroke-width="3" fill="none" opacity="0.7" stroke-linecap="round"/>
+  <path d="M 70 60 Q 80 56 90 54" stroke="#3d2817" stroke-width="3" fill="none" opacity="0.7" stroke-linecap="round"/>
+  <!-- soft frown -->
+  <path d="M 46 84 Q 64 76 82 84" stroke="#1a1108" stroke-width="2.5" fill="none" opacity="0.7" stroke-linecap="round"/>
+  <!-- watercolor splatter accents -->
+  <circle cx="20" cy="30" r="2" fill="#7a5034" opacity="0.4"/>
+  <circle cx="110" cy="34" r="1.5" fill="#7a5034" opacity="0.4"/>
+  <circle cx="14" cy="98" r="1.8" fill="#5a8a3a" opacity="0.3"/>
+  <circle cx="116" cy="92" r="2.2" fill="#7a5034" opacity="0.4"/>
+  <!-- ink drip texture -->
+  <path d="M 30 110 Q 34 116 32 122" stroke="#5c3a1c" stroke-width="1.5" fill="none" opacity="0.4"/>
+</svg>

@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" width="128" height="128">
+  <!-- CHIBI / KAWAII — huge head, big sparkly eyes, pastel palette, super cute -->
+  <defs>
+    <radialGradient id="ch-bg" cx="0.5" cy="0.5">
+      <stop offset="0" stop-color="#fff5fa"/>
+      <stop offset="1" stop-color="#ffd8e8"/>
+    </radialGradient>
+  </defs>
+  <rect width="128" height="128" fill="url(#ch-bg)" rx="20"/>
+  <!-- soft ground shadow -->
+  <ellipse cx="64" cy="116" rx="32" ry="3" fill="#000" opacity="0.15"/>
+  <!-- TINY body at bottom -->
+  <rect x="56" y="98" width="16" height="18" rx="6" fill="#9a7252" stroke="#5c3a1c" stroke-width="2"/>
+  <!-- HUGE head/bean (3/4 of the figure) -->
+  <ellipse cx="64" cy="56" rx="44" ry="42" fill="#c89060" stroke="#5c3a1c" stroke-width="3"/>
+  <!-- highlight cheeks (lighter top) -->
+  <ellipse cx="64" cy="44" rx="36" ry="20" fill="#e8b890" opacity="0.6"/>
+  <!-- center crease (small) -->
+  <path d="M 64 18 Q 60 56 64 96" stroke="#5c3a1c" stroke-width="2.5" fill="none" stroke-linecap="round" opacity="0.7"/>
+  <!-- BIG sparkly eyes (the centerpiece) -->
+  <ellipse cx="44" cy="60" rx="11" ry="14" fill="#fff" stroke="#1a1108" stroke-width="2.5"/>
+  <ellipse cx="84" cy="60" rx="11" ry="14" fill="#fff" stroke="#1a1108" stroke-width="2.5"/>
+  <ellipse cx="44" cy="62" rx="6" ry="9" fill="#5c3a1c"/>
+  <ellipse cx="84" cy="62" rx="6" ry="9" fill="#5c3a1c"/>
+  <!-- big sparkle highlights -->
+  <circle cx="42" cy="58" r="3" fill="#fff"/>
+  <circle cx="82" cy="58" r="3" fill="#fff"/>
+  <circle cx="46" cy="65" r="1.5" fill="#fff"/>
+  <circle cx="86" cy="65" r="1.5" fill="#fff"/>
+  <!-- tiny droopy eyebrows -->
+  <path d="M 36 46 Q 44 44 50 47" stroke="#5c3a1c" stroke-width="2" fill="none" stroke-linecap="round"/>
+  <path d="M 78 47 Q 84 44 92 46" stroke="#5c3a1c" stroke-width="2" fill="none" stroke-linecap="round"/>
+  <!-- tiny "0_o" mouth -->
+  <ellipse cx="64" cy="84" rx="3" ry="2" fill="#5c3a1c"/>
+  <!-- BIG pink kawaii cheeks -->
+  <ellipse cx="32" cy="76" rx="7" ry="5" fill="#ff8da8" opacity="0.85"/>
+  <ellipse cx="96" cy="76" rx="7" ry="5" fill="#ff8da8" opacity="0.85"/>
+  <!-- cute mold blush dot -->
+  <circle cx="98" cy="92" r="6" fill="#a8e0a0" stroke="#5a8a3a" stroke-width="2"/>
+  <ellipse cx="100" cy="90" rx="2" ry="1" fill="#fff" opacity="0.6"/>
+  <!-- floating sparkles -->
+  <text x="20" y="34" font-family="serif" font-size="14" fill="#ff8da8">✦</text>
+  <text x="106" y="38" font-family="serif" font-size="12" fill="#ffaa80">✦</text>
+  <text x="14" y="98" font-family="serif" font-size="10" fill="#ff8da8" opacity="0.7">✦</text>
+</svg>
