@@ -51,8 +51,16 @@ html, body { margin: 0; padding: 0; background: #2b1d12; color: #f5e8d6; font-fa
   right: 8px;
   bottom: 4px;
   font-size: 10px;
-  color: rgba(240, 201, 135, 0.35);
+  color: rgba(240, 201, 135, 0.45);
   z-index: 100;
-  pointer-events: none;
   font-family: -apple-system, system-ui, sans-serif;
+}
+#copyright-corner a {
+  color: rgba(240, 201, 135, 0.7);
+  text-decoration: none;
+  pointer-events: auto;
+}
+#copyright-corner a:hover {
+  color: rgba(255, 245, 214, 1);
+  text-decoration: underline;
 }
