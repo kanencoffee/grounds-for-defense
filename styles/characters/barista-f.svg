@@ -1,0 +1,71 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 320" width="240" height="320">
+  <!-- BARISTA (F) — blonde bob, KANEN tee, friendly cafe staff (Kanen style match) -->
+  <rect width="240" height="320" fill="#dde8ee"/>
+  <rect x="0" y="290" width="240" height="30" fill="#a08868"/>
+  <line x1="0" y1="290" x2="240" y2="290" stroke="#3d2a18" stroke-width="2.5"/>
+  <ellipse cx="120" cy="290" rx="58" ry="4" fill="#3d2a18" opacity="0.3"/>
+  <!-- counter (waist down hidden behind counter, like in source images) -->
+  <rect x="0" y="220" width="240" height="80" fill="#a8927a"/>
+  <rect x="0" y="220" width="240" height="6" fill="#7a624a"/>
+  <line x1="0" y1="220" x2="240" y2="220" stroke="#3d2a18" stroke-width="2.5"/>
+  <!-- BLACK KANEN T-SHIRT (fitted) -->
+  <path d="M 64 140 L 56 222 L 184 222 L 176 140 Q 176 122 162 116 L 144 124 L 120 132 L 96 124 L 78 116 Q 64 122 64 140 Z" fill="#1a1a1a"/>
+  <path d="M 64 140 L 56 222 L 184 222 L 176 140 Q 176 122 162 116 L 144 124 L 120 132 L 96 124 L 78 116 Q 64 122 64 140 Z" fill="none" stroke="#3d2a18" stroke-width="2.5"/>
+  <!-- crew neck -->
+  <path d="M 96 124 L 120 132 L 144 124" fill="none" stroke="#3d2a18" stroke-width="2.5"/>
+  <!-- KANEN logo on chest -->
+  <text x="120" y="170" text-anchor="middle" font-family="Impact, Arial Black, sans-serif" font-size="18" font-weight="900" fill="#fff">KANEN</text>
+  <text x="120" y="184" text-anchor="middle" font-family="serif" font-size="9" font-style="italic" fill="#fff" opacity="0.85">coffee</text>
+  <!-- subtle bust contour through tee (tasteful) -->
+  <path d="M 80 156 Q 100 174 120 170 Q 140 174 160 156" fill="none" stroke="#3a3a3a" stroke-width="1.8" opacity="0.7"/>
+  <!-- subtle waist nip -->
+  <path d="M 60 200 Q 120 208 180 200" fill="none" stroke="#3a3a3a" stroke-width="1.5" opacity="0.6"/>
+  <!-- tee shading -->
+  <path d="M 120 132 L 176 140 L 184 222 L 130 222 Z" fill="#0a0a0a" opacity="0.4"/>
+  <!-- arms -->
+  <path d="M 64 140 Q 50 180 60 218 L 76 218 Q 80 180 80 140 Z" fill="#1a1a1a" stroke="#3d2a18" stroke-width="2.5"/>
+  <path d="M 176 140 Q 190 180 180 218 L 164 218 Q 160 180 160 140 Z" fill="#1a1a1a" stroke="#3d2a18" stroke-width="2.5"/>
+  <!-- waving hand right -->
+  <ellipse cx="170" cy="148" rx="11" ry="14" fill="#f0d4a8" stroke="#3d2a18" stroke-width="2.5"/>
+  <!-- raised arm waving -->
+  <path d="M 176 140 Q 184 110 174 76 L 158 80 Q 164 110 158 140 Z" fill="#1a1a1a" stroke="#3d2a18" stroke-width="2.5"/>
+  <ellipse cx="166" cy="68" rx="11" ry="14" fill="#f0d4a8" stroke="#3d2a18" stroke-width="2.5"/>
+  <!-- finger lines on waving hand -->
+  <line x1="160" y1="58" x2="158" y2="50" stroke="#3d2a18" stroke-width="1.5" stroke-linecap="round"/>
+  <line x1="166" y1="56" x2="166" y2="48" stroke="#3d2a18" stroke-width="1.5" stroke-linecap="round"/>
+  <line x1="172" y1="58" x2="174" y2="50" stroke="#3d2a18" stroke-width="1.5" stroke-linecap="round"/>
+  <!-- left hand -->
+  <ellipse cx="68" cy="226" rx="11" ry="13" fill="#f0d4a8" stroke="#3d2a18" stroke-width="2.5"/>
+  <!-- neck -->
+  <rect x="108" y="100" width="24" height="24" fill="#f0d4a8" stroke="#3d2a18" stroke-width="2.5"/>
+  <!-- neck shading -->
+  <rect x="120" y="100" width="12" height="24" fill="#d8b890" opacity="0.5"/>
+  <!-- HEAD -->
+  <ellipse cx="120" cy="72" rx="34" ry="38" fill="#f0d4a8" stroke="#3d2a18" stroke-width="2.5"/>
+  <!-- ears -->
+  <ellipse cx="86" cy="74" rx="5" ry="8" fill="#f0d4a8" stroke="#3d2a18" stroke-width="2.5"/>
+  <ellipse cx="154" cy="74" rx="5" ry="8" fill="#f0d4a8" stroke="#3d2a18" stroke-width="2.5"/>
+  <!-- face cel-shade -->
+  <path d="M 120 36 Q 154 36 154 72 Q 154 104 120 110 Z" fill="#d8b890" opacity="0.4"/>
+  <!-- BLONDE BOB with bangs -->
+  <path d="M 86 60 Q 84 30 102 24 Q 120 20 138 24 Q 156 30 154 60 L 158 84 Q 152 90 146 88 L 144 64 Q 140 38 120 38 Q 100 38 96 64 L 94 88 Q 88 90 82 84 L 86 60 Z" fill="#e8c860"/>
+  <path d="M 86 60 Q 84 30 102 24 Q 120 20 138 24 Q 156 30 154 60 L 158 84 Q 152 90 146 88 L 144 64 Q 140 38 120 38 Q 100 38 96 64 L 94 88 Q 88 90 82 84 L 86 60 Z" fill="none" stroke="#3d2a18" stroke-width="2.5"/>
+  <!-- bangs -->
+  <path d="M 96 36 Q 110 28 120 30 Q 130 28 144 36 Q 130 32 120 34 Q 110 32 96 36 Z" fill="#e8c860" stroke="#3d2a18" stroke-width="2"/>
+  <!-- hair shading -->
+  <path d="M 120 38 Q 140 38 144 64 L 146 88 Q 152 90 158 84 L 154 60 Q 156 30 138 24 Z" fill="#c8a430" opacity="0.5"/>
+  <!-- gold stud earring -->
+  <circle cx="86" cy="82" r="2.5" fill="#d8a830" stroke="#3d2a18" stroke-width="1"/>
+  <!-- subtle eyebrows -->
+  <path d="M 96 64 Q 104 60 110 64" stroke="#3d2a18" stroke-width="2" fill="none" stroke-linecap="round"/>
+  <path d="M 130 64 Q 136 60 144 64" stroke="#3d2a18" stroke-width="2" fill="none" stroke-linecap="round"/>
+  <!-- DOT EYES -->
+  <circle cx="103" cy="74" r="2.5" fill="#3d2a18"/>
+  <circle cx="137" cy="74" r="2.5" fill="#3d2a18"/>
+  <!-- BIG warm smile -->
+  <path d="M 104 92 Q 120 102 136 92" stroke="#3d2a18" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+  <path d="M 108 94 Q 120 100 132 94" fill="#a8484a" opacity="0.5"/>
+  <!-- cheek tint -->
+  <ellipse cx="98" cy="86" rx="5" ry="3" fill="#e89a82" opacity="0.55"/>
+  <ellipse cx="142" cy="86" rx="5" ry="3" fill="#e89a82" opacity="0.55"/>
+</svg>

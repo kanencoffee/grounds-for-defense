@@ -1,0 +1,67 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 320" width="240" height="320">
+  <!-- THE MASTER TECH — silver hair + white beard, KANEN apron, holding wrench (Kanen style match) -->
+  <rect width="240" height="320" fill="#dde8ee"/>
+  <rect x="0" y="290" width="240" height="30" fill="#a08868"/>
+  <line x1="0" y1="290" x2="240" y2="290" stroke="#3d2a18" stroke-width="2.5"/>
+  <ellipse cx="120" cy="290" rx="58" ry="4" fill="#3d2a18" opacity="0.3"/>
+  <!-- white tee under apron -->
+  <path d="M 60 138 L 52 290 L 188 290 L 180 138 Q 178 120 162 114 L 144 122 L 120 132 L 96 122 L 78 114 Q 62 120 60 138 Z" fill="#fff" stroke="#3d2a18" stroke-width="2.5"/>
+  <!-- crew neck -->
+  <path d="M 96 122 L 120 132 L 144 122" fill="none" stroke="#3d2a18" stroke-width="2.5"/>
+  <!-- KANEN BROWN APRON -->
+  <path d="M 76 132 L 68 290 L 172 290 L 164 132 Q 152 122 120 124 Q 88 122 76 132 Z" fill="#a08260"/>
+  <path d="M 76 132 L 68 290 L 172 290 L 164 132 Q 152 122 120 124 Q 88 122 76 132 Z" fill="none" stroke="#3d2a18" stroke-width="2.5"/>
+  <!-- apron strap (over neck) -->
+  <path d="M 96 124 L 92 100 Q 110 96 120 98 Q 130 96 148 100 L 144 124" fill="none" stroke="#3d2a18" stroke-width="2.5"/>
+  <!-- apron shading -->
+  <path d="M 120 124 L 164 132 L 172 290 L 130 290 Z" fill="#7a5c3a" opacity="0.5"/>
+  <!-- KANEN logo on apron chest -->
+  <text x="120" y="178" text-anchor="middle" font-family="Impact, Arial Black, sans-serif" font-size="16" font-weight="900" fill="#3d2a18">KANEN</text>
+  <text x="120" y="190" text-anchor="middle" font-family="serif" font-size="8" font-style="italic" fill="#3d2a18" opacity="0.85">coffee</text>
+  <!-- broad chest hint -->
+  <path d="M 78 156 Q 100 174 120 174 Q 140 174 162 156" fill="none" stroke="#7a5c3a" stroke-width="1.8" opacity="0.6"/>
+  <!-- left arm normal -->
+  <path d="M 60 138 Q 50 188 60 240 L 78 240 Q 80 188 80 138 Z" fill="#fff" stroke="#3d2a18" stroke-width="2.5"/>
+  <!-- right arm RAISED HOLDING WRENCH (signature pose from kanen art) -->
+  <path d="M 178 138 Q 196 100 188 56 L 168 60 Q 170 100 158 134 Z" fill="#fff" stroke="#3d2a18" stroke-width="2.5"/>
+  <!-- raised hand -->
+  <ellipse cx="180" cy="48" rx="10" ry="13" fill="#e8c4a0" stroke="#3d2a18" stroke-width="2.5"/>
+  <!-- WRENCH (silver) -->
+  <rect x="174" y="20" width="12" height="32" fill="#aaa" stroke="#3d2a18" stroke-width="2"/>
+  <path d="M 168 14 L 174 14 L 178 22 L 174 28 L 168 28 L 168 22 Z M 192 14 L 186 14 L 182 22 L 186 28 L 192 28 L 192 22 Z" fill="#aaa" stroke="#3d2a18" stroke-width="2"/>
+  <!-- left hand (resting) -->
+  <ellipse cx="68" cy="248" rx="10" ry="13" fill="#e8c4a0" stroke="#3d2a18" stroke-width="2.5"/>
+  <!-- neck -->
+  <rect x="108" y="100" width="24" height="20" fill="#e8c4a0" stroke="#3d2a18" stroke-width="2.5"/>
+  <rect x="120" y="100" width="12" height="20" fill="#c8a484" opacity="0.5"/>
+  <!-- HEAD -->
+  <ellipse cx="120" cy="74" rx="36" ry="38" fill="#e8c4a0" stroke="#3d2a18" stroke-width="2.5"/>
+  <!-- ears -->
+  <ellipse cx="84" cy="76" rx="6" ry="9" fill="#e8c4a0" stroke="#3d2a18" stroke-width="2.5"/>
+  <ellipse cx="156" cy="76" rx="6" ry="9" fill="#e8c4a0" stroke="#3d2a18" stroke-width="2.5"/>
+  <path d="M 120 36 Q 156 36 156 74 Q 156 104 120 112 Z" fill="#c8a484" opacity="0.4"/>
+  <!-- SILVER SPIKY HAIR -->
+  <path d="M 84 60 Q 84 28 100 24 L 102 14 L 110 24 L 116 12 L 124 24 L 132 12 L 140 24 L 144 16 Q 156 28 156 60 Q 152 38 144 34 Q 130 30 120 30 Q 108 30 96 34 Q 88 38 84 60 Z" fill="#c8d4dc"/>
+  <path d="M 84 60 Q 84 28 100 24 L 102 14 L 110 24 L 116 12 L 124 24 L 132 12 L 140 24 L 144 16 Q 156 28 156 60 Q 152 38 144 34 Q 130 30 120 30 Q 108 30 96 34 Q 88 38 84 60 Z" fill="none" stroke="#3d2a18" stroke-width="2.5"/>
+  <path d="M 120 30 Q 144 34 152 38 Q 156 48 156 60 Q 144 34 120 30 Z" fill="#a8b8c4" opacity="0.6"/>
+  <!-- subtle eyebrows -->
+  <path d="M 94 64 L 110 66" stroke="#5a6878" stroke-width="2.5" stroke-linecap="round"/>
+  <path d="M 130 66 L 146 64" stroke="#5a6878" stroke-width="2.5" stroke-linecap="round"/>
+  <!-- DOT EYES (closed in concentration — single line) -->
+  <path d="M 100 78 Q 104 80 108 78" stroke="#3d2a18" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+  <path d="M 132 78 Q 136 80 140 78" stroke="#3d2a18" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+  <!-- WHITE BEARD (the iconic feature from step3) -->
+  <path d="M 84 86 Q 84 110 100 116 Q 120 120 140 116 Q 156 110 156 86 Q 152 102 120 106 Q 88 102 84 86 Z" fill="#fff" stroke="#3d2a18" stroke-width="2.5"/>
+  <!-- white mustache -->
+  <path d="M 100 88 Q 110 92 120 90 Q 130 92 140 88 Q 134 100 120 100 Q 106 100 100 88 Z" fill="#fff" stroke="#3d2a18" stroke-width="2"/>
+  <!-- subtle smile in beard -->
+  <path d="M 110 102 Q 120 106 130 102" stroke="#3d2a18" stroke-width="2" fill="none" stroke-linecap="round"/>
+  <!-- subtle nose -->
+  <path d="M 120 84 Q 117 92 120 96" stroke="#3d2a18" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+  <!-- small floating screws/bolts (like step3 — flying parts) -->
+  <circle cx="20" cy="60" r="3" fill="#888" stroke="#3d2a18" stroke-width="1.5"/>
+  <line x1="20" y1="56" x2="20" y2="64" stroke="#3d2a18" stroke-width="1.5"/>
+  <circle cx="216" cy="80" r="3" fill="#888" stroke="#3d2a18" stroke-width="1.5"/>
+  <rect x="14" y="120" width="4" height="6" fill="#888" stroke="#3d2a18" stroke-width="1.5"/>
+  <rect x="218" y="160" width="4" height="6" fill="#888" stroke="#3d2a18" stroke-width="1.5"/>
+</svg>

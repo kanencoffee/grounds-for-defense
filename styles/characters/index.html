@@ -1,0 +1,181 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Character Picker — Grounds for Defense</title>
+<style>
+  body {
+    margin: 0;
+    padding: 32px 24px 100px;
+    background: #2b1d12;
+    color: #f5e8d6;
+    font-family: -apple-system, system-ui, 'Helvetica Neue', sans-serif;
+    line-height: 1.5;
+    min-height: 100vh;
+  }
+  .wrap { max-width: 1200px; margin: 0 auto; }
+  h1 { color: #f0c987; margin: 0 0 8px; font-size: 30px; }
+  .lede { color: rgba(245, 232, 214, 0.75); margin: 0 0 8px; }
+  .style-note {
+    background: #3d2817;
+    border-left: 4px solid #f0c987;
+    padding: 14px 18px;
+    margin: 20px 0 28px;
+    font-size: 14px;
+    color: rgba(245, 232, 214, 0.85);
+    border-radius: 4px;
+  }
+  .style-note strong { color: #f0c987; }
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 18px;
+  }
+  .card {
+    background: #3d2817;
+    border: 2px solid #6b4423;
+    border-radius: 12px;
+    padding: 14px;
+    cursor: pointer;
+    transition: transform 0.15s, border-color 0.15s, box-shadow 0.15s;
+  }
+  .card:hover {
+    transform: translateY(-3px);
+    border-color: #f0c987;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+  }
+  .card.selected {
+    border-color: #d97706;
+    border-width: 3px;
+    box-shadow: 0 0 0 4px rgba(217, 119, 6, 0.25);
+  }
+  .img-frame {
+    background: #fff;
+    border-radius: 8px;
+    aspect-ratio: 240/320;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 12px;
+    overflow: hidden;
+  }
+  .img-frame img { width: 100%; height: 100%; object-fit: contain; }
+  .name { font-size: 17px; font-weight: 700; color: #f0c987; margin: 0 0 4px; }
+  .desc { font-size: 12px; color: rgba(245, 232, 214, 0.7); margin: 0; line-height: 1.45; }
+  .footer { margin-top: 40px; padding-top: 24px; border-top: 1px solid rgba(240, 201, 135, 0.2); font-size: 13px; color: rgba(245, 232, 214, 0.6); }
+  .selection-bar {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: #3d2817;
+    border-top: 2px solid #f0c987;
+    padding: 14px 24px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    transform: translateY(100%);
+    transition: transform 0.25s ease;
+    z-index: 100;
+  }
+  .selection-bar.show { transform: translateY(0); }
+  .selection-bar p { margin: 0; font-size: 14px; }
+  .selection-bar strong { color: #f0c987; font-size: 16px; }
+  .selection-bar code { background: #1a1108; padding: 4px 8px; border-radius: 4px; color: #f0c987; font-size: 13px; }
+  .selection-bar button { padding: 10px 18px; background: #d97706; color: #fff; border: none; border-radius: 6px; font-weight: 700; cursor: pointer; }
+  .selection-bar button:hover { background: #f59e0b; }
+  a { color: #f0c987; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <h1>Character Picker</h1>
+  <p class="lede">Five character samples in the <strong>Kanen Coffee illustration style</strong> — clean cartoon, thin ink outlines, flat cel-shaded colors, friendly natural proportions. Same aesthetic as your <a href="https://kanencoffee.com/pages/repairs" target="_blank">repairs page illustrations</a>.</p>
+  <div class="style-note">
+    <strong>Style match analysis:</strong> Pulled from kanencoffee.com/pages/repairs — the customer/staff/technician illustrations there use editorial-cartoon style (~2-3px ink outlines, flat cel-shaded colors, warm muted palette, dot eyes, KANEN-branded apparel). All five samples below match that aesthetic so they'd feel native to your brand.
+  </div>
+
+  <div class="grid" id="grid"></div>
+
+  <div class="footer">
+    <p>Click any character to highlight + copy the command. Tell Claude "use STYLE_NAME as the player character" and I'll wire it into the game across all 3 states (idle / sip / yuck).</p>
+    <p><a href="../">← Back to style picker</a> &middot; <a href="../../">Back to game</a> &middot; © 2026 Kanen Coffee, LLC.</p>
+  </div>
+</div>
+
+<div class="selection-bar" id="bar">
+  <p>You picked <strong id="pickname">—</strong>. Tell Claude: <code id="pickcode">—</code></p>
+  <button onclick="copyCode()">Copy</button>
+</div>
+
+<script>
+const characters = [
+  {
+    id: 'customer',
+    name: 'The Customer',
+    src: 'customer.svg',
+    desc: 'Silver-haired gentleman, blue polo, friendly customer vibe. Matches the customer figure on the Kanen repairs page.'
+  },
+  {
+    id: 'barista-f',
+    name: 'The Barista',
+    src: 'barista-f.svg',
+    desc: 'Blonde-bob woman in KANEN tee, waving warmly. Direct match to the cafe staff on the repairs page.'
+  },
+  {
+    id: 'master-tech',
+    name: 'The Master Tech',
+    src: 'master-tech.svg',
+    desc: 'White beard + silver hair, KANEN apron, holding wrench. The signature "fixing" pose from your step 3 illustration.'
+  },
+  {
+    id: 'curly-barista',
+    name: 'The Curly Barista',
+    src: 'curly-barista.svg',
+    desc: 'Dark skin + voluminous natural curls + gold hoops, KANEN apron, holding portafilter. Brings diversity to the cast.'
+  },
+  {
+    id: 'glasses-roaster',
+    name: 'The Glasses Roaster',
+    src: 'glasses-roaster.svg',
+    desc: 'Burgundy beanie, big round glasses, flannel + KANEN apron, scruffy beard, clipboard + mug. Hipster roaster archetype.'
+  }
+];
+
+const grid = document.getElementById('grid');
+const bar = document.getElementById('bar');
+let selectedId = null;
+
+characters.forEach(c => {
+  const card = document.createElement('div');
+  card.className = 'card';
+  card.dataset.id = c.id;
+  card.innerHTML = `
+    <div class="img-frame"><img src="${c.src}" alt="${c.name}" /></div>
+    <p class="name">${c.name}</p>
+    <p class="desc">${c.desc}</p>
+  `;
+  card.onclick = () => select(c);
+  grid.appendChild(card);
+});
+
+function select(c) {
+  selectedId = c.id;
+  document.querySelectorAll('.card').forEach(el => el.classList.toggle('selected', el.dataset.id === c.id));
+  document.getElementById('pickname').textContent = c.name;
+  document.getElementById('pickcode').textContent = `use ${c.id} as my player character`;
+  bar.classList.add('show');
+}
+function copyCode() {
+  if (!selectedId) return;
+  navigator.clipboard?.writeText(`use ${selectedId} as my player character`);
+  const btn = bar.querySelector('button');
+  const orig = btn.textContent;
+  btn.textContent = '✓ Copied';
+  setTimeout(() => { btn.textContent = orig; }, 1200);
+}
+</script>
+</body>
+</html>

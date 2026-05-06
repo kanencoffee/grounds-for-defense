@@ -1,0 +1,79 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 320" width="240" height="320">
+  <!-- GLASSES ROASTER (NB) — beanie + glasses, KANEN apron, holds clipboard (Kanen style) -->
+  <rect width="240" height="320" fill="#dde8ee"/>
+  <rect x="0" y="290" width="240" height="30" fill="#a08868"/>
+  <line x1="0" y1="290" x2="240" y2="290" stroke="#3d2a18" stroke-width="2.5"/>
+  <ellipse cx="120" cy="290" rx="58" ry="4" fill="#3d2a18" opacity="0.3"/>
+  <!-- gray flannel under apron -->
+  <path d="M 60 138 L 52 290 L 188 290 L 180 138 Q 178 120 162 114 L 144 122 L 120 132 L 96 122 L 78 114 Q 62 120 60 138 Z" fill="#7a8a8a" stroke="#3d2a18" stroke-width="2.5"/>
+  <!-- flannel plaid pattern -->
+  <line x1="80" y1="140" x2="84" y2="290" stroke="#5a6a6a" stroke-width="1"/>
+  <line x1="104" y1="138" x2="106" y2="290" stroke="#5a6a6a" stroke-width="1"/>
+  <line x1="128" y1="138" x2="130" y2="290" stroke="#5a6a6a" stroke-width="1"/>
+  <line x1="152" y1="138" x2="154" y2="290" stroke="#5a6a6a" stroke-width="1"/>
+  <line x1="60" y1="180" x2="180" y2="180" stroke="#5a6a6a" stroke-width="1"/>
+  <line x1="58" y1="220" x2="180" y2="220" stroke="#5a6a6a" stroke-width="1"/>
+  <line x1="56" y1="260" x2="180" y2="260" stroke="#5a6a6a" stroke-width="1"/>
+  <!-- crew neck -->
+  <path d="M 96 122 L 120 132 L 144 122" fill="none" stroke="#3d2a18" stroke-width="2.5"/>
+  <!-- KANEN BROWN APRON -->
+  <path d="M 76 132 L 68 290 L 172 290 L 164 132 Q 152 122 120 124 Q 88 122 76 132 Z" fill="#a08260"/>
+  <path d="M 76 132 L 68 290 L 172 290 L 164 132 Q 152 122 120 124 Q 88 122 76 132 Z" fill="none" stroke="#3d2a18" stroke-width="2.5"/>
+  <path d="M 96 124 L 92 100 Q 110 96 120 98 Q 130 96 148 100 L 144 124" fill="none" stroke="#3d2a18" stroke-width="2.5"/>
+  <path d="M 120 124 L 164 132 L 172 290 L 130 290 Z" fill="#7a5c3a" opacity="0.5"/>
+  <!-- KANEN logo -->
+  <text x="120" y="178" text-anchor="middle" font-family="Impact, Arial Black, sans-serif" font-size="16" font-weight="900" fill="#3d2a18">KANEN</text>
+  <text x="120" y="190" text-anchor="middle" font-family="serif" font-size="8" font-style="italic" fill="#3d2a18" opacity="0.85">coffee</text>
+  <!-- arms -->
+  <path d="M 60 138 Q 50 188 60 240 L 78 240 Q 80 188 80 138 Z" fill="#7a8a8a" stroke="#3d2a18" stroke-width="2.5"/>
+  <path d="M 180 138 Q 190 188 180 240 L 162 240 Q 160 188 160 138 Z" fill="#7a8a8a" stroke="#3d2a18" stroke-width="2.5"/>
+  <!-- left hand holding clipboard -->
+  <ellipse cx="68" cy="248" rx="10" ry="13" fill="#e8c4a0" stroke="#3d2a18" stroke-width="2.5"/>
+  <!-- right hand holding small mug -->
+  <ellipse cx="172" cy="248" rx="10" ry="13" fill="#e8c4a0" stroke="#3d2a18" stroke-width="2.5"/>
+  <!-- clipboard -->
+  <rect x="50" y="222" width="30" height="40" fill="#c8a060" stroke="#3d2a18" stroke-width="2.5"/>
+  <line x1="56" y1="232" x2="74" y2="232" stroke="#3d2a18" stroke-width="0.8"/>
+  <line x1="56" y1="240" x2="74" y2="240" stroke="#3d2a18" stroke-width="0.8"/>
+  <line x1="56" y1="248" x2="74" y2="248" stroke="#3d2a18" stroke-width="0.8"/>
+  <rect x="60" y="218" width="10" height="6" fill="#aaa" stroke="#3d2a18" stroke-width="1.5"/>
+  <!-- coffee mug -->
+  <path d="M 158 230 L 160 264 Q 160 270 166 270 L 178 270 Q 184 270 184 264 L 186 230 Z" fill="#fff" stroke="#3d2a18" stroke-width="2.5"/>
+  <ellipse cx="172" cy="230" rx="14" ry="3" fill="#3d2817" stroke="#3d2a18" stroke-width="1.5"/>
+  <path d="M 186 240 Q 192 244 192 252 Q 192 258 186 258" fill="none" stroke="#3d2a18" stroke-width="2.5"/>
+  <path d="M 168 226 Q 166 220 170 214" stroke="#aaa" stroke-width="2" fill="none" stroke-linecap="round"/>
+  <!-- neck -->
+  <rect x="108" y="100" width="24" height="20" fill="#e8c4a0" stroke="#3d2a18" stroke-width="2.5"/>
+  <rect x="120" y="100" width="12" height="20" fill="#c8a484" opacity="0.5"/>
+  <!-- HEAD -->
+  <ellipse cx="120" cy="74" rx="34" ry="38" fill="#e8c4a0" stroke="#3d2a18" stroke-width="2.5"/>
+  <ellipse cx="86" cy="76" rx="5" ry="8" fill="#e8c4a0" stroke="#3d2a18" stroke-width="2.5"/>
+  <ellipse cx="154" cy="76" rx="5" ry="8" fill="#e8c4a0" stroke="#3d2a18" stroke-width="2.5"/>
+  <path d="M 120 36 Q 154 36 154 74 Q 154 104 120 112 Z" fill="#c8a484" opacity="0.4"/>
+  <!-- BURGUNDY BEANIE (the iconic detail) -->
+  <path d="M 84 50 Q 84 22 120 18 Q 156 22 156 50 L 156 60 L 84 60 Z" fill="#7a2828"/>
+  <path d="M 84 50 Q 84 22 120 18 Q 156 22 156 50 L 156 60 L 84 60 Z" fill="none" stroke="#3d2a18" stroke-width="2.5"/>
+  <!-- beanie cuff (folded edge) -->
+  <rect x="84" y="56" width="72" height="10" fill="#5a1818" stroke="#3d2a18" stroke-width="2"/>
+  <!-- beanie pom-pom (small) -->
+  <circle cx="120" cy="14" r="6" fill="#5a1818" stroke="#3d2a18" stroke-width="2"/>
+  <!-- side hair tufts (brown peeking out) -->
+  <path d="M 84 64 Q 80 76 84 84" stroke="#5c3a1c" stroke-width="3" fill="none" stroke-linecap="round"/>
+  <path d="M 156 64 Q 160 76 156 84" stroke="#5c3a1c" stroke-width="3" fill="none" stroke-linecap="round"/>
+  <!-- BIG ROUND GLASSES -->
+  <circle cx="100" cy="78" r="11" fill="#fff" fill-opacity="0.1" stroke="#3d2a18" stroke-width="2.5"/>
+  <circle cx="140" cy="78" r="11" fill="#fff" fill-opacity="0.1" stroke="#3d2a18" stroke-width="2.5"/>
+  <line x1="111" y1="78" x2="129" y2="78" stroke="#3d2a18" stroke-width="2.5"/>
+  <!-- DOT EYES -->
+  <circle cx="100" cy="80" r="2.5" fill="#3d2a18"/>
+  <circle cx="140" cy="80" r="2.5" fill="#3d2a18"/>
+  <!-- subtle nose -->
+  <path d="M 120 90 Q 117 98 120 102" stroke="#3d2a18" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+  <!-- short beard / scruff -->
+  <path d="M 100 102 Q 100 116 120 118 Q 140 116 140 102 Q 138 110 120 112 Q 102 110 100 102 Z" fill="#5c3a1c" stroke="#3d2a18" stroke-width="2"/>
+  <!-- gentle smile peeking through -->
+  <path d="M 110 108 Q 120 113 130 108" stroke="#3d2a18" stroke-width="2" fill="none" stroke-linecap="round"/>
+  <!-- cheek tint -->
+  <ellipse cx="86" cy="94" rx="5" ry="3" fill="#e89a82" opacity="0.4"/>
+  <ellipse cx="154" cy="94" rx="5" ry="3" fill="#e89a82" opacity="0.4"/>
+</svg>
