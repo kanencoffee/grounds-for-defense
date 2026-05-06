@@ -377,7 +377,7 @@ class GameScene extends Phaser.Scene {
 
     this.updateHUD();
     this.bindDOM();
-    showOverlay('Grounds for Defense','Bad coffee marches on the Barista: stale beans, pre-ground bags, reheated milk, watery weak cups, burnt charcoal beans, and the K-Pod Tyrant himself. Defend the counter.','Begin', ()=>{ hideOverlay(); Audio.ensureCtx && Audio.ensureCtx(); Audio.startMusic && Audio.startMusic(); });
+    showOverlay('Grounds for Defense','Bad coffee marches on the Barista: stale beans, pre-ground bags, reheated milk, watery weak cups, burnt charcoal beans, and the K-Pod Tyrant himself. Defend the counter.\n\n© 2026 Kanen Coffee, LLC. All Rights Reserved.','Begin', ()=>{ hideOverlay(); Audio.ensureCtx && Audio.ensureCtx(); Audio.startMusic && Audio.startMusic(); });
 
     this.input.on('pointerdown', (p)=>{
       if (!this.perfectShotArmed) return;
