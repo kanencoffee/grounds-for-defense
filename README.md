@@ -34,4 +34,4 @@ This is proprietary software owned by Kanen Coffee, LLC. See [LICENSE](./LICENSE
 Personal, non-commercial play of the published game is permitted.
 All other use requires written permission.
 
-Contact: samuel@kanencoffee.com
+Contact: service@kanencoffee.com
