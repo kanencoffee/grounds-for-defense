@@ -308,23 +308,23 @@ class GameScene extends Phaser.Scene {
   constructor(){ super('Game'); }
   preload(){
     const SVGS = [
-      ['t_drip','assets/tower-drip.svg',64],
-      ['t_espresso','assets/tower-espresso.svg',64],
-      ['t_frother','assets/tower-frother.svg',64],
-      ['t_cold','assets/tower-cold.svg',64],
-      ['t_grinder','assets/tower-grinder.svg',64],
-      ['t_pourover','assets/tower-pourover.svg',64],
-      ['t_aeropress','assets/tower-aeropress.svg',64],
-      ['e_disciple','assets/enemy-disciple.svg',56],
-      ['e_evangelist','assets/enemy-evangelist.svg',56],
-      ['e_demon','assets/enemy-demon.svg',64],
-      ['e_zealot','assets/enemy-zealot.svg',56],
-      ['e_wraith','assets/enemy-wraith.svg',56],
-      ['e_baron','assets/enemy-baron.svg',72],
-      ['bean','assets/bean.svg',16],
-      ['barista','assets/barista.svg',96],
+      ['t_drip','assets/tower-drip.png',64],
+      ['t_espresso','assets/tower-espresso.png',64],
+      ['t_frother','assets/tower-frother.png',64],
+      ['t_cold','assets/tower-cold.png',64],
+      ['t_grinder','assets/tower-grinder.png',64],
+      ['t_pourover','assets/tower-pourover.png',64],
+      ['t_aeropress','assets/tower-aeropress.png',64],
+      ['e_disciple','assets/enemy-disciple.png',56],
+      ['e_evangelist','assets/enemy-evangelist.png',56],
+      ['e_demon','assets/enemy-demon.png',64],
+      ['e_zealot','assets/enemy-zealot.png',56],
+      ['e_wraith','assets/enemy-wraith.png',56],
+      ['e_baron','assets/enemy-baron.png',72],
+      ['bean','assets/bean.png',16],
+      ['barista','assets/barista.png',96],
     ];
-    for (const [k,u,s] of SVGS) this.load.svg(k, u, { width:s, height: u==='assets/barista.svg'? 120 : s });
+    for (const [k,u,s] of SVGS) this.load.image(k, u);
   }
   create(){
     window.scene = this;
