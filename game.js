@@ -493,7 +493,7 @@ class GameScene extends Phaser.Scene {
     if (this.wave >= this.maxWaves) return;
     this.wave++;
     Audio.sfx.waveStart();
-    Audio.startMusic();
+    Audio.startMusic(this.wave);
     const plan = WAVE_PLAN[this.wave-1];
     this.spawning = true; this.waveActive = true;
     let pending = plan.length;

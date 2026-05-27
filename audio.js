@@ -71,19 +71,31 @@ const Audio = (() => {
 
   function ensureCtx() { /* no-op: audio elements don't need ctx warmup */ return true; }
 
-  function startMusic(track = 'main') {
+  // Resolve track key to filename. Accepts:
+  //   number 1-10  -> music-wave-N.mp3
+  //   "main"/undef -> music-wave-1.mp3 (lobby/menu)
+  //   "boss"       -> music-wave-10.mp3
+  function resolveTrack(track) {
+    if (typeof track === 'number' && track >= 1 && track <= 10) {
+      return { key: 'wave-' + track, file: 'music-wave-' + track + '.mp3' };
+    }
+    if (track === 'boss') return { key: 'wave-10', file: 'music-wave-10.mp3' };
+    return { key: 'wave-1', file: 'music-wave-1.mp3' };
+  }
+
+  function startMusic(track) {
     if (muted) return;
-    if (musicEl && currentMusic === track) {
+    const { key, file } = resolveTrack(track);
+    if (musicEl && currentMusic === key) {
       if (musicEl.paused) musicEl.play().catch(()=>{});
       return;
     }
     stopMusic();
-    const file = track === 'boss' ? 'music-boss.mp3' : 'music-main.mp3';
     musicEl = new window.Audio(BASE + file);
     musicEl.loop = true;
     musicEl.volume = 0.25;
     musicEl.play().catch(()=>{});
-    currentMusic = track;
+    currentMusic = key;
   }
 
   function stopMusic() {
