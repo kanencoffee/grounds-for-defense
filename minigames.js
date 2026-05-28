@@ -255,3 +255,4 @@ const Minigames = (() => {
 
   return { play, isOpen, rewardAmount, count: GAMES.length };
 })();
+window.Minigames = Minigames;
