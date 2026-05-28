@@ -349,7 +349,7 @@ class GameScene extends Phaser.Scene {
     // the barista (player avatar at end of path)
     const last = PATH_PTS[PATH_PTS.length-1];
     const charKey = window.selectedChar || 'barista';
-    this.barista = this.add.image(last[0]-50, last[1]-10, charKey).setDepth(2).setDisplaySize(96,120);
+    this.barista = this.add.image(last[0]-50, last[1]-10, charKey).setDepth(2).setDisplaySize(192,240);
     this.tweens.add({ targets: this.barista, scale: { from: 0.8, to: 0.84 }, duration: 1800, yoyo:true, repeat:-1, ease:'Sine.easeInOut' });
     // slots
     this.slots = SLOTS.map(([x,y], i)=>{
