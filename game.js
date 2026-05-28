@@ -2,13 +2,13 @@
 const W = 1024, H = 640;
 
 const TOWER_DEFS = {
-  drip:      { name:'Magnifier',   cost:50,  range:130, dmg:6,   fireRate:220, sprite:'t_drip',     proj:0xf5e8d6, blurb:'Visual inspection. Fast weak scans.' },
-  espresso:  { name:'Cupping Spoon',cost:150, range:240, dmg:60,  fireRate:1800,sprite:'t_espresso', proj:0xd97706, charge:1500, pierce:true, blurb:'Slow taste verdict — piercing line shot.' },
-  frother:   { name:'Thermometer', cost:75,  range:140, dmg:4,   fireRate:1200,sprite:'t_frother',  proj:0xffffff, root:1200, blurb:'Temp check freezes hot defects briefly.' },
-  cold:      { name:'Hydrometer',  cost:100, range:130, dmg:0,   fireRate:0,   sprite:'t_cold',     proj:0x88bbee, slow:0.55, aura:true, blurb:'Density check slows all in range.' },
-  grinder:   { name:'Color Chart', cost:120, range:110, dmg:0,   fireRate:300, sprite:'t_grinder',  proj:0x6b4423, shred:0.3, blurb:'Exposes weak roasts — +30% damage taken.' },
-  pourover:  { name:'Aroma Wheel', cost:200, range:160, dmg:18,  fireRate:600, sprite:'t_pourover', proj:0xd97706, splash:50, blurb:'Aroma test — splash damage, area denial.' },
-  aeropress: { name:'Date Stamp',  cost:130, range:170, dmg:14,  fireRate:280, sprite:'t_aeropress',proj:0xc0c0c0, knockback:6, blurb:'Expiration verdict — rapid knockback shots.' },
+  drip:      { name:'Magnifier',    cost:50,  range:130, dmg:6,   fireRate:220, sprite:'t_drip',     proj:0xf5e8d6, blurb:'Look closely. Quick visual checks.' },
+  espresso:  { name:'Taste Spoon',  cost:150, range:240, dmg:60,  fireRate:1800,sprite:'t_espresso', proj:0xd97706, charge:1500, pierce:true, blurb:'Slow taste test — decisive piercing verdict.' },
+  frother:   { name:'Thermometer',  cost:75,  range:140, dmg:4,   fireRate:1200,sprite:'t_frother',  proj:0xffffff, root:1200, blurb:'Temperature check freezes hot defects.' },
+  cold:      { name:'Stopwatch',    cost:100, range:130, dmg:0,   fireRate:0,   sprite:'t_cold',     proj:0x88bbee, slow:0.55, aura:true, blurb:'Times the brew — slows everything in range.' },
+  grinder:   { name:'Kitchen Scale',cost:120, range:110, dmg:0,   fireRate:300, sprite:'t_grinder',  proj:0x6b4423, shred:0.3, blurb:'Weighs the dose — exposes weak coffee (+30%).' },
+  pourover:  { name:'Sniff Test',   cost:200, range:160, dmg:18,  fireRate:600, sprite:'t_pourover', proj:0xd97706, splash:50, blurb:'Nose-first aroma check — area splash damage.' },
+  aeropress: { name:'Calendar',     cost:130, range:170, dmg:14,  fireRate:280, sprite:'t_aeropress',proj:0xc0c0c0, knockback:6, blurb:'Roast-date check — rapid knockback shots.' },
 };
 
 const ENEMY_DEFS = {
