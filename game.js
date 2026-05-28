@@ -323,6 +323,11 @@ class GameScene extends Phaser.Scene {
       ['e_baron','assets/enemy-baron.png',72],
       ['bean','assets/bean.png',16],
       ['barista','assets/barista.png',96],
+      ['char-roaster','assets/roaster.png',96],
+      ['char-owner','assets/char-owner.png',96],
+      ['char-apprentice','assets/char-apprentice.png',96],
+      ['char-qgrader','assets/char-qgrader.png',96],
+      ['char-cat','assets/char-cat.png',96],
     ];
     for (const [k,u,s] of SVGS) this.load.image(k, u);
   }
@@ -343,7 +348,8 @@ class GameScene extends Phaser.Scene {
     g.lineStyle(2, 0xa07842, 0.6); this.path.draw(g);
     // the barista (player avatar at end of path)
     const last = PATH_PTS[PATH_PTS.length-1];
-    this.barista = this.add.image(last[0]-50, last[1]-10, 'barista').setDepth(2).setDisplaySize(96,120);
+    const charKey = window.selectedChar || 'barista';
+    this.barista = this.add.image(last[0]-50, last[1]-10, charKey).setDepth(2).setDisplaySize(96,120);
     this.tweens.add({ targets: this.barista, scale: { from: 0.8, to: 0.84 }, duration: 1800, yoyo:true, repeat:-1, ease:'Sine.easeInOut' });
     // slots
     this.slots = SLOTS.map(([x,y], i)=>{
@@ -377,7 +383,8 @@ class GameScene extends Phaser.Scene {
 
     this.updateHUD();
     this.bindDOM();
-    showOverlay('Grounds for Defense','Bad coffee marches on the Barista: stale beans, pre-ground bags, reheated milk, watery weak cups, burnt charcoal beans, and the K-Pod Tyrant himself. Defend the counter.\n\n© 2026 Kanen Coffee, LLC. All Rights Reserved.','Begin', ()=>{ hideOverlay(); Audio.ensureCtx && Audio.ensureCtx(); Audio.startMusic && Audio.startMusic(); });
+    populateCharSelect();
+    showOverlay('Grounds for Defense','Bad coffee marches on the Barista: stale beans, pre-ground bags, reheated milk, watery weak cups, burnt charcoal beans, and the K-Pod Tyrant himself. Defend the counter.\n\n© 2026 Kanen Coffee, LLC. All Rights Reserved.','Begin', ()=>{ hideOverlay(); Audio.ensureCtx && Audio.ensureCtx(); Audio.startMusic && Audio.startMusic(); this.barista.setTexture(window.selectedChar || 'barista'); });
 
     this.input.on('pointerdown', (p)=>{
       if (!this.perfectShotArmed) return;
@@ -562,6 +569,31 @@ class GameScene extends Phaser.Scene {
   }
 }
 
+const CHARACTERS = [
+  { key:'barista',        name:'Barista',    file:'assets/barista.png' },
+  { key:'char-roaster',   name:'Roaster',    file:'assets/roaster.png' },
+  { key:'char-owner',     name:'Owner',      file:'assets/char-owner.png' },
+  { key:'char-apprentice',name:'Apprentice', file:'assets/char-apprentice.png' },
+  { key:'char-qgrader',   name:'Q-Grader',   file:'assets/char-qgrader.png' },
+  { key:'char-cat',       name:'Shop Cat',   file:'assets/char-cat.png' },
+];
+window.selectedChar = 'barista';
+function populateCharSelect(){
+  const grid = document.querySelector('#char-select .char-grid');
+  if (!grid || grid.children.length) { document.getElementById('char-select').classList.remove('hidden'); return; }
+  CHARACTERS.forEach(c => {
+    const card = document.createElement('div');
+    card.className = 'char-card' + (c.key === window.selectedChar ? ' selected' : '');
+    card.dataset.key = c.key;
+    card.innerHTML = `<img src="${c.file}" alt="${c.name}"><div class="name">${c.name}</div>`;
+    card.onclick = () => {
+      window.selectedChar = c.key;
+      grid.querySelectorAll('.char-card').forEach(el => el.classList.toggle('selected', el.dataset.key === c.key));
+    };
+    grid.appendChild(card);
+  });
+  document.getElementById('char-select').classList.remove('hidden');
+}
 function show(id){ document.getElementById(id).classList.remove('hidden'); }
 function hide(id){ document.getElementById(id).classList.add('hidden'); }
 function showOverlay(title, msg, btnText, cb){
