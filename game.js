@@ -2,13 +2,13 @@
 const W = 1024, H = 640;
 
 const TOWER_DEFS = {
-  drip:      { name:'Drip',       cost:50,  range:130, dmg:6,   fireRate:220, sprite:'t_drip',     proj:0xf5e8d6, blurb:'Old reliable. Fast weak shots.' },
-  espresso:  { name:'Espresso',   cost:150, range:240, dmg:60,  fireRate:1800,sprite:'t_espresso', proj:0xd97706, charge:1500, pierce:true, blurb:'Charges, then fires a piercing line shot.' },
-  frother:   { name:'Frother',    cost:75,  range:140, dmg:4,   fireRate:1200,sprite:'t_frother',  proj:0xffffff, root:1200, blurb:'Brief freeze + chip damage.' },
-  cold:      { name:'Cold Brew',  cost:100, range:130, dmg:0,   fireRate:0,   sprite:'t_cold',     proj:0x88bbee, slow:0.55, aura:true, blurb:'Slow aura, all enemies in range.' },
-  grinder:   { name:'Grinder',    cost:120, range:110, dmg:0,   fireRate:300, sprite:'t_grinder',  proj:0x6b4423, shred:0.3, blurb:'Shreds armor; targets take +30% from all sources.' },
-  pourover:  { name:'Pour-Over',  cost:200, range:160, dmg:18,  fireRate:600, sprite:'t_pourover', proj:0xd97706, splash:50, blurb:'Splash damage, area denial.' },
-  aeropress: { name:'Aeropress',  cost:130, range:170, dmg:14,  fireRate:280, sprite:'t_aeropress',proj:0xc0c0c0, knockback:6, blurb:'Rapid shots; knocks enemies back.' },
+  drip:      { name:'Magnifier',   cost:50,  range:130, dmg:6,   fireRate:220, sprite:'t_drip',     proj:0xf5e8d6, blurb:'Visual inspection. Fast weak scans.' },
+  espresso:  { name:'Cupping Spoon',cost:150, range:240, dmg:60,  fireRate:1800,sprite:'t_espresso', proj:0xd97706, charge:1500, pierce:true, blurb:'Slow taste verdict — piercing line shot.' },
+  frother:   { name:'Thermometer', cost:75,  range:140, dmg:4,   fireRate:1200,sprite:'t_frother',  proj:0xffffff, root:1200, blurb:'Temp check freezes hot defects briefly.' },
+  cold:      { name:'Hydrometer',  cost:100, range:130, dmg:0,   fireRate:0,   sprite:'t_cold',     proj:0x88bbee, slow:0.55, aura:true, blurb:'Density check slows all in range.' },
+  grinder:   { name:'Color Chart', cost:120, range:110, dmg:0,   fireRate:300, sprite:'t_grinder',  proj:0x6b4423, shred:0.3, blurb:'Exposes weak roasts — +30% damage taken.' },
+  pourover:  { name:'Aroma Wheel', cost:200, range:160, dmg:18,  fireRate:600, sprite:'t_pourover', proj:0xd97706, splash:50, blurb:'Aroma test — splash damage, area denial.' },
+  aeropress: { name:'Date Stamp',  cost:130, range:170, dmg:14,  fireRate:280, sprite:'t_aeropress',proj:0xc0c0c0, knockback:6, blurb:'Expiration verdict — rapid knockback shots.' },
 };
 
 const ENEMY_DEFS = {
