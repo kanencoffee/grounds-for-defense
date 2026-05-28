@@ -556,7 +556,23 @@ class GameScene extends Phaser.Scene {
     if (this.waveActive && !this.spawning && this.enemies.length===0){
       this.waveActive = false;
       this.addBeans(30 + this.wave*5);
-      if (this.wave >= this.maxWaves) this.win(); else Audio.sfx.waveClear();
+      if (this.wave >= this.maxWaves) {
+        // Trigger final minigame, then win
+        if (window.Minigames) {
+          Minigames.play(this.wave, (success) => {
+            if (success) this.addBeans(Minigames.rewardAmount());
+            this.win();
+          });
+        } else this.win();
+      } else {
+        Audio.sfx.waveClear();
+        // Trigger minigame for this completed wave
+        if (window.Minigames) {
+          Minigames.play(this.wave, (success) => {
+            if (success) { this.addBeans(Minigames.rewardAmount()); this.updateHUD(); }
+          });
+        }
+      }
       this.updateHUD();
     }
     if (!this.perfectShotReady && time >= this.perfectShotCdEnd){

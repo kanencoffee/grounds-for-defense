@@ -36,6 +36,15 @@
     <button id="sell-btn">Sell</button>
     <button class="cancel">Cancel</button>
   </div>
+  <div id="mg-modal" class="overlay hidden">
+    <div class="overlay-card mg-card">
+      <h1 id="mg-title">Minigame</h1>
+      <p id="mg-lesson"></p>
+      <div id="mg-body"></div>
+      <div id="mg-result" class="mg-result"></div>
+      <button id="mg-skip" class="mg-skip-btn">Skip (no reward)</button>
+    </div>
+  </div>
   <div id="overlay" class="overlay hidden">
     <div class="overlay-card">
       <h1 id="overlay-title">Defend the Brew</h1>
@@ -53,6 +62,7 @@
     <a href="legal/privacy.html" target="_blank">Privacy</a>
   </div>
   <script src="audio.js"></script>
+  <script src="minigames.js"></script>
   <script src="game.js"></script>
 </body>
 </html>
