@@ -4,7 +4,7 @@ const W = 1024, H = 640;
 const TOWER_DEFS = {
   drip:      { name:'Drip',       cost:50,  range:130, dmg:6,   fireRate:220, sprite:'t_drip',     proj:0xf5e8d6, blurb:'Old reliable. Fast weak shots.' },
   espresso:  { name:'Espresso',   cost:150, range:240, dmg:60,  fireRate:1800,sprite:'t_espresso', proj:0xd97706, charge:1500, pierce:true, blurb:'Charges, then fires a piercing line shot.' },
-  frother:   { name:'Frother',    cost:75,  range:140, dmg:0,   fireRate:1200,sprite:'t_frother',  proj:0xffffff, root:2000, blurb:'Roots target. No damage.' },
+  frother:   { name:'Frother',    cost:75,  range:140, dmg:4,   fireRate:1200,sprite:'t_frother',  proj:0xffffff, root:1200, blurb:'Brief freeze + chip damage.' },
   cold:      { name:'Cold Brew',  cost:100, range:130, dmg:0,   fireRate:0,   sprite:'t_cold',     proj:0x88bbee, slow:0.55, aura:true, blurb:'Slow aura, all enemies in range.' },
   grinder:   { name:'Grinder',    cost:120, range:110, dmg:0,   fireRate:300, sprite:'t_grinder',  proj:0x6b4423, shred:0.3, blurb:'Shreds armor; targets take +30% from all sources.' },
   pourover:  { name:'Pour-Over',  cost:200, range:160, dmg:18,  fireRate:600, sprite:'t_pourover', proj:0xd97706, splash:50, blurb:'Splash damage, area denial.' },
@@ -130,8 +130,8 @@ class Enemy {
     this.hpBg.setPosition(p.x - this.def.size, p.y - this.def.size - 6);
     this.hpBar.setPosition(p.x - this.def.size, p.y - this.def.size - 6);
     this.hpBar.width = this.def.size*2 * Math.max(0, this.hp/this.maxHp);
-    // root tint
-    if (this.rooted > now) this.gfx.setTint(0xaaccff);
+    // root tint (re-apply each frame; cleared by takeDamage's clearTint)
+    if (this.rooted > now) this.gfx.setTint(0xaaccff); else this.gfx.clearTint();
     // reset auras for next frame
     this.slowMult = 1;
     this.shredMult = 1;
